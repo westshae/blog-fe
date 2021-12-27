@@ -7,6 +7,8 @@ import { Container, Content } from "../components/Containers";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 
+
+
 interface postDataInterface {
   title?: string;
   id?: number;
@@ -38,29 +40,26 @@ const Section = styled.div<SectionProps>`
   grid-template-rows:1fr 1fr;
 `;
 
-
-
 const TitleStyle = styled.h1`
   font-size: 1.75rem;
 
   color: #800000;
   border: none;
-  font-weight: bold;
 `
 
 const TextStyle = styled.p`
-  font-size:1.25rem;;
+  font-size:1.75rem;;
 
   color: #800000;
   border: none;
-  font-weight: bold;
 `
 
 const Blog: NextPage = () => {
   const id = useRouter().query.id;
 
-  const [text, setText] = useState("");
+  const [text, setText] = useState<string[]>([]);
   const [postData, setPostData] = useState<postDataInterface>({});
+  
 
   useEffect(() => {
     axios
@@ -83,12 +82,21 @@ const Blog: NextPage = () => {
         },
       })
       .then((res) => {
-        setText(res.data.text);
+        const split = String(res.data.text).split("\\");
+        setText(split);
       })
       .catch((e) => {
         console.error(e);
       });
   }, []);
+
+  const returnText = (text:string[]) =>{
+    let container = [];
+    for(let current of text){
+      container.push(<TextStyle>{current}</TextStyle>);
+    }
+    return container;
+  }
 
   return (
     <Container>
@@ -107,7 +115,7 @@ const Blog: NextPage = () => {
             </Section>
             
           </DataStyle>
-          <TextStyle>{text}</TextStyle>
+          {returnText(text)}
         </OverallStyle>
       </Content>
       <Footer />
