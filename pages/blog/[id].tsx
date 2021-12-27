@@ -45,7 +45,7 @@ const TextStyle = styled.p`
 
 
 
-const Blog: NextPage = ({id}) => {
+const Blog: NextPage<IDProp> = ({id}) => {
   const [text, setText] = useState<string[]>([]);
   const [postData, setPostData] = useState<postDataInterface>({});
   
@@ -104,6 +104,10 @@ const Blog: NextPage = ({id}) => {
     </Container>
   );
 };
+
+interface IDProp {
+  id:number
+}
 
 Blog.getInitialProps = async ({ query }) => {
   const id:number = Number(query.id);
