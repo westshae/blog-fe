@@ -19,9 +19,6 @@ interface postDataInterface {
 
 const DataStyle = styled.div`
   padding:1.25rem;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
 `
 
 const TitleStyle = styled.h1`
@@ -35,11 +32,18 @@ const TitleStyle = styled.h1`
 const TextStyle = styled.p`
   font-size:1.75rem;
   padding-left:1.25rem;
+  padding-right:1.25rem;
   margin-top:0.5rem;
 
 
   color:#ebebeb;
   border: none;
+
+  @media only screen
+    and (max-device-width: 480px){
+      font-size:1.25rem;
+      text-align:center;
+    }
 `
 
 

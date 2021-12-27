@@ -6,6 +6,10 @@ import styled from "styled-components";
 const CardContainer = styled.div`
   display:grid;
   grid-template-columns:1fr 1fr;
+  @media only screen
+    and (max-device-width: 480px){
+      grid-template-columns:1fr;
+    }
 `
 
 const CardStyle = styled.div`

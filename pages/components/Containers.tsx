@@ -20,6 +20,12 @@ const Content = styled.div`
     overflow-y:scroll;
     padding-left:20%;
     padding-right:20%;
+
+    
+    @media only screen
+    and (max-device-width: 480px){
+      padding:0px;
+    }
 `
 
 
