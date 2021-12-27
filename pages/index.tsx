@@ -10,7 +10,6 @@ const Home: NextPage = () => {
     <Container>
       <Navigation/>
       <Content>
-        <h1>REE</h1>
         <Explore/>
       </Content>
       <Footer/>

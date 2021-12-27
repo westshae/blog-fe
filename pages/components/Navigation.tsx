@@ -1,6 +1,5 @@
 //Package imports
 import styled from "styled-components";
-import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 
