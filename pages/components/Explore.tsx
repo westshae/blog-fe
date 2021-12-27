@@ -9,29 +9,17 @@ const CardContainer = styled.div`
 `
 
 const CardStyle = styled.div`
-  background:#dfdfd7;
+  background:#292929;
   margin:0.75rem;
   padding:0.5rem;
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr;
 
-  color: #800000;
+  justify-content:left;
+  color:#ebebeb;
+
   border: none;
-  font-weight: bold;
 `
-
-interface SectionProps {
-  side: string;
-}
-
-const Section = styled.div<SectionProps>`
-  justify-content: ${(props) => props.side};
-  
-  display: grid;
-  grid-template-rows:1fr 1fr;
-`;
-
-
 
 const CardTitle = styled.h1`
   font-size: 1.75rem;
@@ -60,18 +48,10 @@ const Card = (props:CardProps) =>{
       }}
     >
       <CardStyle>
-        <Section side="left">
           <CardTitle>{props.title}</CardTitle>  
           <CardText>{props.description}</CardText>
+          <CardText>{props.date}</CardText>
 
-        </Section>
-        <Section side="right">
-        {/* <CardText>{props.id}</CardText> */}
-
-        <CardText>{props.author}</CardText>
-        <CardText>{props.date}</CardText>
-
-        </Section>
       </CardStyle>
     </Link>
   )

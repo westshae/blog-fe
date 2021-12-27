@@ -5,7 +5,9 @@ import Link from "next/link";
 
 //Style for navigation bar background
 const StyledNavigation = styled.nav`
-  background-color: transparent;
+  background-color: #292929;
+  color:#ebebeb;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;
@@ -26,18 +28,20 @@ const Section = styled.div<SectionProps>`
 const Title = styled.button`
   font-size: 1.5rem;
   background: transparent;
-  color: #800000;
   border: none;
-  font-weight: bold;
+  color:#ebebeb;
+  padding: 1rem;
 `;
 
-const Button = styled.a`
-  font-size: 1.25rem;
+const Button = styled.button`
+  font-size: 1.5rem;
   background: transparent;
-  color: #800000;
   border: none;
-  font-weight: bold;
+  color:#ebebeb;
   padding: 1rem;
+  :hover{
+    text-decoration:underline;
+  }
 `;
 
 //Logic for navigation bar
@@ -45,7 +49,7 @@ const Navigation = () => {
   return (
     <StyledNavigation>
       <Section side="left">
-        <Title>blog.westshae.com</Title>
+        <Title>Writing by Shae West</Title>
       </Section>
       <Section side="right">
         <Link href="/">

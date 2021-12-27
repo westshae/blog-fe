@@ -27,7 +27,8 @@ const DataStyle = styled.div`
 const TitleStyle = styled.h1`
   font-size: 1.6rem;
 
-  color: #800000;
+  color:#ebebeb;
+
   border: none;
 `
 
@@ -37,13 +38,14 @@ const TextStyle = styled.p`
   margin-top:0.5rem;
 
 
-  color: #800000;
+  color:#ebebeb;
   border: none;
 `
 
-const Blog: NextPage = () => {
-  const id = useRouter().query.id;
 
+
+
+const Blog: NextPage = ({id}) => {
   const [text, setText] = useState<string[]>([]);
   const [postData, setPostData] = useState<postDataInterface>({});
   
@@ -102,5 +104,11 @@ const Blog: NextPage = () => {
     </Container>
   );
 };
+
+Blog.getInitialProps = async ({ query }) => {
+  const id:number = Number(query.id);
+
+  return {id}
+}
 
 export default Blog;
