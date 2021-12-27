@@ -1,21 +1,19 @@
 import type { NextPage } from 'next'
 import { Container, Content } from './components/Containers'
-import Explore from './components/Explore'
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
 
 
-const Home: NextPage = () => {
+const Blog: NextPage = () => {
   return (
     <Container>
       <Navigation/>
       <Content>
-        <h1>REE</h1>
-        <Explore/>
+        <h1>Blog</h1>
       </Content>
       <Footer/>
     </Container>
   )
 }
 
-export default Home
+export default Blog

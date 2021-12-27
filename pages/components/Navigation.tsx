@@ -43,18 +43,15 @@ const Button = styled.a`
 
 //Logic for navigation bar
 const Navigation = () => {
-
   return (
     <StyledNavigation>
       <Section side="left">
         <Title>blog.westshae.com</Title>
       </Section>
       <Section side="right">
-          <Link href="/">
-            <Button>Explore</Button>
-          </Link>
-        )
-
+        <Link href="/">
+          <Button>Home</Button>
+        </Link>
       </Section>
     </StyledNavigation>
   );
