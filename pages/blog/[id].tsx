@@ -17,38 +17,25 @@ interface postDataInterface {
   date?: string;
 }
 
-const OverallStyle = styled.div`
-`;
-
 const DataStyle = styled.div`
-  background:#dfdfd7;
-  margin:0.75rem;
-  padding:0.5rem;
+  padding:1.25rem;
   display:grid;
   grid-template-columns:1fr 1fr;
 
 `
 
-interface SectionProps {
-  side: string;
-}
-
-const Section = styled.div<SectionProps>`
-  justify-content: ${(props) => props.side};
-  
-  display: grid;
-  grid-template-rows:1fr 1fr;
-`;
-
 const TitleStyle = styled.h1`
-  font-size: 1.75rem;
+  font-size: 1.6rem;
 
   color: #800000;
   border: none;
 `
 
 const TextStyle = styled.p`
-  font-size:1.75rem;;
+  font-size:1.75rem;
+  padding-left:1.25rem;
+  margin-top:0.5rem;
+
 
   color: #800000;
   border: none;
@@ -93,6 +80,7 @@ const Blog: NextPage = () => {
   const returnText = (text:string[]) =>{
     let container = [];
     for(let current of text){
+      if(current === '') continue;
       container.push(<TextStyle>{current}</TextStyle>);
     }
     return container;
@@ -102,21 +90,13 @@ const Blog: NextPage = () => {
     <Container>
       <Navigation />
       <Content>
-        <OverallStyle>
+        <div>
           <DataStyle>
-            <Section side="left">
             <TitleStyle>{postData.title}</TitleStyle>
-            <TitleStyle>{postData.description}</TitleStyle>
-            </Section>
-            <Section side="right">
-
-            <TitleStyle>{postData.author}</TitleStyle>
-            <TitleStyle>{postData.date}</TitleStyle>
-            </Section>
             
           </DataStyle>
           {returnText(text)}
-        </OverallStyle>
+        </div>
       </Content>
       <Footer />
     </Container>
