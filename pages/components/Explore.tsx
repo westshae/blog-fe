@@ -81,7 +81,7 @@ const Explore = () =>{
   const [blogList, setBlogList] = useState([]);
 
   useEffect(()=>{
-    axios.get("http://localhost:5000/blog/list")
+    axios.get("http://localhost:5000/blog/posts")
     .then((res)=>{
       setBlogList(res.data);
     })
