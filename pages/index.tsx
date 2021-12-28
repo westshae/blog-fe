@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import { Container, Content } from './components/Containers'
-import Explore from './components/Explore'
-import Footer from './components/Footer'
-import Navigation from './components/Navigation'
+import {Explore} from './components/Explore'
+import {Footer} from './components/Footer'
+import {Navigation} from './components/Navigation'
 
 
 const Home: NextPage = () => {

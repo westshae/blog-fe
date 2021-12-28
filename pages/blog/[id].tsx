@@ -1,11 +1,10 @@
 import axios from "axios";
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Container, Content } from "../components/Containers";
-import Footer from "../components/Footer";
-import Navigation from "../components/Navigation";
+import {Footer} from "../components/Footer";
+import {Navigation} from "../components/Navigation";
 
 
 
