@@ -84,4 +84,4 @@ const Explore = () =>{
   )
 }
 
-export {Explore};
+export default Explore;

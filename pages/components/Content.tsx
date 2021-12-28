@@ -1,14 +1,4 @@
-import styled from "styled-components";
-
-//Overall container for all components on the page, wraps around navbar and content
-const Container = styled.div`
-    background-color:#212121;
-    display:flex;
-    flex-direction:column;
-    overflow:visible;
-    height: 100vh;
-    width: 100vw;
-`
+import styled from "styled-components"
 
 const Content = styled.div`
     margin-bottom:3%;
@@ -28,6 +18,4 @@ const Content = styled.div`
     }
 `
 
-
-
-export {Container, Content};
+export default Content
