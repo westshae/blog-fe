@@ -52,11 +52,14 @@ const TextStyle = styled.p`
 const Blog: NextPage<IDProp> = ({id}) => {
   const [text, setText] = useState<string[]>([]);
   const [postData, setPostData] = useState<postDataInterface>({});
+
+  const backend_ip = "https://blog-be-production.up.railway.app"
   
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/blog/card", {
+      .get(`${backend_ip}/blog/card`, {
+        // .get("http://localhost:5000/blog/card", {
         params: {
           id: id,
         },
@@ -69,7 +72,8 @@ const Blog: NextPage<IDProp> = ({id}) => {
       });
 
     axios
-      .get("http://localhost:5000/blog/blog", {
+      .get(`${backend_ip}/blog/blog`, {
+      // .get("http://localhost:5000/blog/blog", {
         params: {
           id: id,
         },

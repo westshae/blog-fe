@@ -64,8 +64,11 @@ const Card = (props:CardProps) =>{
 const Explore = () =>{
   const [blogList, setBlogList] = useState([]);
 
+  const backend_ip = "https://blog-be-production.up.railway.app";
+  //const backend_ip = "http://localhost:5000"
+
   useEffect(()=>{
-    axios.get("http://localhost:5000/blog/posts")
+    axios.get(`${backend_ip}/blog/posts`)
     .then((res)=>{
       setBlogList(res.data);
     })
