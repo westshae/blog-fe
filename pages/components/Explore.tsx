@@ -45,7 +45,7 @@ const Card = (props:CardProps) =>{
   return(
     // <Link href="blog">
     <Link href={{
-      pathname: "/blog/[id]",
+      pathname: "/[id]",
       query: {
           id: props.id,
           }
@@ -65,7 +65,7 @@ const Explore = () =>{
   const [blogList, setBlogList] = useState([]);
 
   const backend_ip = "https://blog-be-production.up.railway.app";
-  //const backend_ip = "http://localhost:5000"
+  // const backend_ip = "http://localhost:5000"
 
   useEffect(()=>{
     axios.get(`${backend_ip}/blog/posts`)
