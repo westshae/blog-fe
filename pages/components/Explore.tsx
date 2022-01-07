@@ -80,7 +80,7 @@ const Explore = () =>{
   
   return(
     <CardContainer>
-      {blogList.map((value:CardProps)=>{
+      {blogList.slice(0).reverse().map((value:CardProps)=>{
         return <Card title={value.title} id={value.id} description={value.description} author={value.author} date={value.date}/>
       })}
     </CardContainer>
